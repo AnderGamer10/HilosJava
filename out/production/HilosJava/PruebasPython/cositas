@@ -1,0 +1,77 @@
+
+//            try{
+//                ProcessBuilder pb = new ProcessBuilder(Arrays.asList("python.exe", "D:/Exercises/CositasPython/Script.py"));
+//                Process p = pb.start();
+//
+//                BufferedReader bfr = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//                String line;
+//                while ((line = bfr.readLine()) != null){
+//                    System.out.println(line);
+//                }
+//            }catch(Exception e){
+//                System.out.println(e);
+//            }
+//        try{
+//            // Parámetros a pasar
+//            String Nombre = "Ander", Apellido = "Redondo";
+//            // Establecer los parámetros entrantes de la línea de comando
+//            String[] args1 = new String[] { "python.exe", "D:/Exercises/CositasPython/Script.py", Nombre + " " + Apellido};
+//            Process pr = Runtime.getRuntime().exec(args1);
+//            // TODO: este método solo puede pasar cadenas
+//
+//            BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+//            String line;
+//
+//            while ((line = in.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        }catch(Exception e){
+//            System.out.println(e);
+//        }
+
+//        try{
+//
+//            Scanner scanner = new Scanner(System.in);
+//
+//            ProcessBuilder builder = new ProcessBuilder("python.exe","D:/Exercises/CositasPython/Script.py");
+//
+//            Process process = builder.start();
+//            InputStream inputStream = process.getInputStream();
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//
+//            String line = bufferedReader.readLine();
+//            System.out.println(line);
+//
+//            System.out.println("¿Cual es tu nombre?");
+//            String nombre = scanner.nextLine();
+//
+//            OutputStream outStream = process.getOutputStream();
+//            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outStream));
+//            bufferedWriter.write(nombre);
+//
+//            /* Al darle a enter borramos la informacion introducida */
+//            bufferedWriter.newLine();
+//            bufferedWriter.flush();
+//
+//            /* Escuchamos lo que dice */
+//            line = bufferedReader.readLine();
+//            System.out.println(line);
+
+////            System.out.println("¿Cual es tu apellido?");
+////            String apellido = scanner.nextLine();
+////            bufferedWriter.write(apellido);
+////
+////            bufferedWriter.newLine();
+////            bufferedWriter.flush();
+//
+////            line = bufferedReader.readLine();
+////            System.out.println(line);
+//
+//            inputStream.close();
+//            bufferedReader.close();
+//            outStream.close();
+//            bufferedWriter.close();
+//
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
