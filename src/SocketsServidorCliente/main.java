@@ -7,18 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class main {
-    public static void main(String[] args) throws IOException{
+    static List<Socket> listSockets = new ArrayList<>();
+    public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(6666);
-        List<Hilo> listaDeClientes = new ArrayList<>();
         int contador = 0;
         while (true){
             Socket cliente = serverSocket.accept();
+            listSockets.add(cliente);
+            new Thread(new Hilo(cliente, contador)).start();
             contador++;
-            listaDeClientes.add(new Hilo(cliente,contador));
-            listaDeClientes.get(listaDeClientes.size()-1).start();
-
         }
-
 
     }
 }
