@@ -13,10 +13,12 @@ public class Cliente {
                 try {
                     Scanner scanner = new Scanner(System.in);
                     String message = scanner.nextLine();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-                    bufferedWriter.write(message);
-                    bufferedWriter.newLine();
-                    bufferedWriter.flush();
+                    if(message.trim().length() > 0){
+                        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                        bufferedWriter.write(message);
+                        bufferedWriter.newLine();
+                        bufferedWriter.flush();
+                    }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
