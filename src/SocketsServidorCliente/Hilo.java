@@ -21,6 +21,9 @@ public class Hilo extends Thread{
                 String lineaFinal = "Cliente " + contador +" escribe: " + linea;
                 System.out.println(lineaFinal);
                 main.listSockets.forEach(socket -> {
+//                    if (cliente!=socket){
+//
+//                    }
                     try {
                         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                         bufferedWriter.write(lineaFinal);
